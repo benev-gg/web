@@ -1,0 +1,48 @@
+{
+	"name": "@benev/web",
+	"version": "0.1.0-1",
+	"description": "✨ benev web sdk",
+	"license": "MIT",
+	"type": "module",
+	"main": "./x/index.js",
+	"exports": {
+		".": "./x/index.js"
+	},
+	"files": [
+		"x",
+		"s"
+	],
+	"scripts": {
+		"build": "rm -rf x && mkdir x && tsc && scute -v",
+		"dev": "octo 'tsc -w' 'scute -vw' 'node --watch x/test.js' 'hottie x'",
+		"test": "node x/test.js",
+		"count": "find s -path '*/_archive' -prune -o -name '*.ts' -exec wc -l {} +"
+	},
+	"allowScripts": {
+		"esbuild@0.28.0": true
+	},
+	"peerDependencies": {
+		"@e280/sly": "^0.4.0-next.5",
+		"@e280/strata": "^0.4.0-next.8",
+		"lit": "^3.3.2"
+	},
+	"dependencies": {
+		"@e280/stz": "^0.2.36"
+	},
+	"devDependencies": {
+		"@e280/hottie": "^0.1.1",
+		"@e280/octo": "^0.1.1",
+		"@e280/science": "^0.1.11",
+		"@e280/scute": "^0.3.3",
+		"typescript": "^6.0.3"
+	},
+	"author": "Chase Moskal <chasemoskal@gmail.com>",
+	"homepage": "https://github.com/benev-gg/web#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/benev-gg/web.git"
+	},
+	"bugs": {
+		"url": "https://github.com/benev-gg/web/issues"
+	}
+}
