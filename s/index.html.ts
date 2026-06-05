@@ -1,8 +1,6 @@
 
 import {template, html, socialCard, dataSvgEmoji} from "@e280/scute"
 
-const favicon = "/assets/favicon.png"
-
 export default template(import.meta.url, async orb => html`
 	<!doctype html>
 	<html>
@@ -13,11 +11,12 @@ export default template(import.meta.url, async orb => html`
 			<style>@layer base{html{background:#000;color:#aaa;}}</style>
 
 			<title>@benev/web</title>
-			<link rel="icon" href="${favicon}"/>
 			<link rel="icon" href="${dataSvgEmoji("😇")}"/>
 			<script type="module" src="${orb.hashurl("main.bundle.min.js")}"></script>
 
-			<style data-theme>${orb.inject("css/vars.css")}</style>
+			<style data-theme>@layer base, basis, benev;</style>
+			<style data-theme>${orb.inject("css/basis.css")}</style>
+			<style data-theme>${orb.inject("css/benev.css")}</style>
 
 			${socialCard({
 				themeColor: "#ffdd22",
