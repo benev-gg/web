@@ -11,18 +11,27 @@ export default css`@layer benev.view {
 		height: 100dvh;
 		display: flex;
 		flex-direction: column;
+	}
 
-		> header {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
+	.header {
+		position: absolute;
+		inset: 0 0 auto 0;
 
+		.tray {
+			overflow: hidden;
+			transition: height var(--benev-anim) ease;
+			height: 0;
+			background: #00f4;
+
+			[data-opened] & {
+				height: min(20em, calc(100dvh - 3em));
+			}
+		}
+
+		.bar {
 			display: flex;
 			justify-content: space-between;
 			padding: calc(var(--benev-pad) / 2) var(--benev-pad);
-
-			border: 1px solid yellow;
 
 			.b {
 				:host([subtle]) & {
@@ -35,11 +44,11 @@ export default css`@layer benev.view {
 				}
 			}
 		}
+	}
 
-		> slot {
-			display: block;
-			flex: 1 1 auto;
-		}
+	.contentslot {
+		display: block;
+		flex: 1 1 auto;
 	}
 }`
 

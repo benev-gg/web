@@ -92,5 +92,20 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 			text-transform: unset;
 		}
 	}
+
+	benev-shell:not(:defined) {
+		.topnav {
+			position: absolute;
+			inset: 0 0 auto 0;
+
+			display: flex;
+			justify-content: end;
+			width: 100%;
+			max-width: var(--benev-site-width);
+
+			margin: 0 auto;
+			padding: calc(var(--benev-pad) / 2) var(--benev-pad);
+		}
+	}
 }`
 

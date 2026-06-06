@@ -36,12 +36,14 @@ export default template(import.meta.url, async orb => html`
 		</head>
 		<body>
 			<benev-shell>
-				<nav slot=nav>
+				<nav class=topnav slot=nav>
 					<a href="https://benev.gg/">benev.gg</a>
 				</nav>
 
 				<main benev-slice>
-					<h1>benev</h1>
+					<benev-loader>
+						<h1>benev</h1>
+					</benev-loader>
 				</main>
 			</benev-shell>
 		</body>
