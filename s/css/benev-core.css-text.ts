@@ -5,6 +5,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		--benev-font-size: 18px;
 		--benev-site-width: 62em;
 		--benev-copy-width: 70ch;
+		--benev-headroom: 3em;
 
 		--benev-bg: #111;
 		--benev-prime: #ebb935;
@@ -66,6 +67,8 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		flex-wrap: wrap;
 		padding: var(--benev-pad) var(--benev-space);
 
+		font-weight: bold;
+		text-transform: uppercase;
 		color: var(--benev-prime);
 		background: oklch(from var(--benev-bg) l c h / 50%);
 		border: var(--benev-thick) solid currentColor;
@@ -90,6 +93,22 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 			border-radius: 0;
 			border: none;
 			text-transform: unset;
+			font-weight: inherit;
+			text-transform: inherit;
+		}
+
+		&[benev-button="juicy"] {
+			opacity: 1;
+			color: black;
+			border: var(--benev-thick) solid var(--benev-prime);
+			background: linear-gradient(
+				to bottom,
+				oklch(from var(--benev-prime) calc(l * 1.5) c h),
+				oklch(from var(--benev-prime) l calc(c * 1.5) h)
+			);
+			&:is(:hover, :focus-visible) {
+				box-shadow: 0 0 2em color-mix(in oklch, transparent, var(--benev-prime));
+			}
 		}
 	}
 

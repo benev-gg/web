@@ -2,18 +2,17 @@
 import {css} from "lit"
 export default css`@layer benev.view {
 	:host {
-		display: contents;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-height: 100dvh;
 	}
 
 	.shell {
-		position: relative;
-		height: 100dvh;
-		display: flex;
-		flex-direction: column;
+		display: contents;
 	}
 
 	[part="backdrop"] {
-		pointer-events: none;
 		opacity: 0;
 		position: absolute;
 		inset: 0;
@@ -23,7 +22,6 @@ export default css`@layer benev.view {
 		transition: all var(--benev-anim) linear;
 
 		[data-opened] & {
-			pointer-events: all;
 			opacity: 1;
 		}
 	}
@@ -69,14 +67,21 @@ export default css`@layer benev.view {
 			}
 
 			.navslot {
+				opacity: 1;
+				transition: opacity var(--benev-anim) linear;
 				display: block;
 				flex: 1 1 auto;
+
+				[data-opened] & {
+					opacity: 0;
+				}
 			}
 		}
 	}
 
 	.contentslot {
-		display: block;
+		display: flex;
+		flex-direction: column;
 		flex: 1 1 auto;
 	}
 }`

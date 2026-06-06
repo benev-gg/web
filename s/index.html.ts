@@ -18,8 +18,8 @@ export default template(import.meta.url, async orb => html`
 				@layer base, basis, benev, demo;
 				@layer base {
 					:root {
-						color:#aaa;
-						background:#000;
+						color: #aaa;
+						background: #000;
 					}
 				}
 				${html.raw(basisCssText)}
@@ -36,7 +36,7 @@ export default template(import.meta.url, async orb => html`
 		</head>
 		<body>
 			<benev-shell>
-				<nav class=topnav slot=nav>
+				<nav slot=nav>
 					<a href="https://benev.gg/" benev-link>benev.gg</a>
 				</nav>
 

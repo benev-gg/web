@@ -4,8 +4,8 @@ import {dom} from "@e280/sly"
 import {errorString} from "@e280/stz"
 import {Shell} from "./dom/shell/shell.js"
 import {Loader} from "./dom/loader/loader.js"
-import {shellComponent} from "./dom/shell/element.js"
-import {loaderComponent} from "./dom/loader/element.js"
+import {shellComponent} from "./dom/shell/component.js"
+import {loaderComponent} from "./dom/loader/component.js"
 
 const shell = new Shell()
 const loader = new Loader({
