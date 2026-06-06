@@ -11,7 +11,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		--benev-text: color-mix(in oklch, var(--benev-prime), #fffa 75%);
 		--benev-intense: white;
 		--benev-focus: 2px solid cyan;
-		--benev-link: color-mix(in oklch, var(--benev-prime), white 50%);
+		--benev-link: color-mix(in oklch, var(--benev-prime), white 25%);
 
 		--benev-select-bg: #f60;
 		--benev-select-color: #ff8;
@@ -40,13 +40,13 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 			color: var(--benev-link);
 		}
 
-		&:is(:hover, :focus-visible) {
-			color: color-mix(in srgb, white, var(--benev-link) 90%);
+		&:hover, &:focus-visible {
+			color: color-mix(in srgb, var(--benev-link), white 15%);
 			text-decoration: underline;
 		}
 
 		&:active {
-			color: color-mix(in srgb, white, var(--benev-link) 50%);
+			color: color-mix(in srgb, var(--benev-link), white 50%);
 		}
 	}
 
@@ -64,7 +64,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		display: inline-flex;
 		align-items: center;
 		flex-wrap: wrap;
-		padding: var(--pad) var(--space);
+		padding: var(--benev-pad) var(--benev-space);
 
 		color: var(--benev-prime);
 		background: oklch(from var(--benev-bg) l c h / 50%);

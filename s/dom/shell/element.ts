@@ -27,14 +27,16 @@ export const shellComponent = (shell: Shell) => shadowElement(() => {
 
 	return html`
 		<div class=shell ?data-opened=${shell.$open()}>
-			<header class=header benev-slice>
-				<div class=tray benev-slice>
+			<div part=backdrop @click=${shell.close}></div>
+
+			<header part=header benev-slice>
+				<div part=tray benev-slice>
 					${shell.$open() ? html`
 						<p>wip, settings and stuff will go here</p>
 					` : null}
 				</div>
 
-				<div class=bar>
+				<div part=bar>
 					<button class=b benev-button=naked @click=${shell.toggle}>
 						<img class=b src="${bDataPng}" alt=""/>
 					</button>
