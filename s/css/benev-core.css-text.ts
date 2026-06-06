@@ -1,5 +1,6 @@
 
-@layer benev {
+import {templateString as css} from "@e280/stz"
+export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.core {
 	:root, :host {
 		--benev-font-size: 18px;
 		--benev-site-width: 62em;
@@ -19,10 +20,11 @@
 		--benev-thin: 1px;
 		--benev-thick: 2px;
 		--benev-border: var(--benev-thin) solid color-mix(in oklch, transparent, var(--benev-line) 50%);
+		--benev-inactive-opacity: 0.8;
 
 		--benev-pad: 0.5em;
 		--benev-space: 1em;
-		--benev-anim: 300ms;
+		--benev-anim: 200ms;
 		--benev-round: 0.5em;
 		--benev-blur: 0.5em;
 
@@ -48,7 +50,17 @@
 		}
 	}
 
+	[benev-slice] {
+		width: 100%;
+		max-width: var(--benev-site-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	[benev-button] {
+		font: inherit;
+		text-decoration: none;
+
 		display: inline-flex;
 		align-items: center;
 		flex-wrap: wrap;
@@ -56,9 +68,29 @@
 
 		color: var(--benev-prime);
 		background: oklch(from var(--benev-bg) l c h / 50%);
-
-		border: none;
+		border: var(--benev-thick) solid currentColor;
 		border-radius: var(--benev-round);
+
+		&[disabled] {
+			opacity: 0.3;
+		}
+
+		&:not([disabled]) {
+			opacity: var(--benev-inactive-opacity);
+			cursor: pointer;
+			transform: scale(100%);
+			transition: transform var(--benev-anim) ease;
+			&:hover, &:focus-visible { opacity: 1; transform: scale(110%); }
+			&:active { opacity: var(--benev-inactive-opacity); }
+		}
+
+		&[benev-button="naked"] {
+			color: inherit;
+			background: transparent;
+			border-radius: 0;
+			border: none;
+			text-transform: unset;
+		}
 	}
-}
+}`
 
