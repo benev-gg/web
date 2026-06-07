@@ -1,16 +1,5 @@
 
 @layer demo {
-	html {
-		font-size: var(--benev-font-size);
-		font-family: sans-serif;
-		background: var(--benev-bg);
-	}
-
-	benev-shell > nav {
-		display: flex;
-		justify-content: end;
-	}
-
 	main {
 		padding: var(--benev-pad);
 		padding-top: var(--benev-headroom);

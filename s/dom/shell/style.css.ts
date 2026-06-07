@@ -1,13 +1,6 @@
 
 import {css} from "lit"
 export default css`@layer benev.view {
-	:host {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		min-height: 100dvh;
-	}
-
 	.shell {
 		display: contents;
 	}

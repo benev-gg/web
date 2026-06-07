@@ -50,6 +50,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		scrollbar-width: thin;
 
 		color: var(--benev-text);
+		background: var(--benev-bg);
 		text-shadow: var(--benev-text-shadow);
 	}
 
@@ -60,8 +61,21 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		margin-right: auto;
 	}
 
-	benev-shell:not(:defined) {
-		.topnav {
+	benev-shell {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-height: 100dvh;
+		--mheight: 1.8em;
+
+		[slot="nav"] {
+			display: flex;
+			align-items: center;
+			justify-content: end;
+			min-height: var(--mheight);
+		}
+
+		&:not(:defined) [slot="nav"] {
 			position: absolute;
 			inset: 0 0 auto 0;
 
@@ -69,6 +83,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 			justify-content: end;
 			width: 100%;
 			max-width: var(--benev-site-width);
+			min-height: calc(var(--mheight) + var(--benev-pad));
 
 			margin: 0 auto;
 			padding: calc(var(--benev-pad) / 2) var(--benev-pad);
