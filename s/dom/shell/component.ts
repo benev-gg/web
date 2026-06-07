@@ -34,13 +34,14 @@ export const shellComponent = (shell: Shell) => shadowElement(() => {
 			<header part=header benev-slice>
 				<div part=tray benev-slice>
 					${shell.$open() ? html`
-						<p>wip, settings and stuff will go here</p>
+						<p>b menu</p>
+						<p>coming soon</p>
 					` : null}
 				</div>
 
 				<div part=bar>
-					<button class=b benev-button=naked title="benev.gg" @click=${shell.toggle}>
-						<img part=b-img src="${bDataPng}" alt=""/>
+					<button class=b benev-button=naked title="b menu" @click=${shell.toggle}>
+						<img part=b-img src="${bDataPng}" alt="b"/>
 					</button>
 					<slot class=navslot name=nav ?inert=${open}></slot>
 				</div>
