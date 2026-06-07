@@ -35,17 +35,17 @@ export default template(import.meta.url, async orb => html`
 			})}
 		</head>
 		<body>
-			<benev-shell>
-				<nav slot=nav>
-					<a href="https://benev.gg/" benev-link>benev.gg</a>
-				</nav>
+			<benev-header>
+				<a href="https://benev.gg/">benev.gg</a>
+			</benev-header>
 
-				<main benev-slice>
-					<benev-loader>
-						<h1>benev</h1>
-					</benev-loader>
-				</main>
-			</benev-shell>
+			<benev-menu></benev-menu>
+
+			<main benev-slice>
+				<benev-loader>
+					<h1>benev</h1>
+				</benev-loader>
+			</main>
 		</body>
 	</html>
 `)

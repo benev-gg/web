@@ -1,5 +1,6 @@
 
 import {templateString as css} from "@e280/stz"
+
 export const basisCssText = css`@layer basis {
 	*, ::before, ::after {
 		margin: 0;

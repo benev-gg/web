@@ -1,5 +1,7 @@
 
 import {templateString as css} from "@e280/stz"
+import {consts} from "../consts.js"
+
 export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.core {
 	:root, :host {
 		--benev-font-size: 18px;
@@ -26,9 +28,10 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 
 		--benev-pad: 0.5em;
 		--benev-space: 1em;
-		--benev-anim: 200ms;
+		--benev-anim: ${consts.anim}ms;
 		--benev-round: 0.5em;
-		--benev-blur: 1em;
+		--benev-blur: blur(1em);
+		--benev-backdrop: rgb(0 0 0 / 50%);
 
 		--benev-box-shadow: 0 0.5em 2em #0008;
 		--benev-text-shadow: 0.04em 0.08em 0.1em #0008;
@@ -59,6 +62,13 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		max-width: var(--benev-site-width);
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	benev-header {
+		display: block;
+		width: 100%;
+		max-width: var(--benev-site-width);
+		margin: 0 auto;
 	}
 
 	benev-shell {

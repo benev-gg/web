@@ -1,7 +1,7 @@
 
 import {html} from "lit"
 import {shadowElement, useCss} from "@e280/sly"
-import {Loader} from "./loader.js"
+import {Loader} from "../../brains/loader.js"
 import {themeCss} from "../../css/theme.css.js"
 import styleCss from "./style.css.js"
 
