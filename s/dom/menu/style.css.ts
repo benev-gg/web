@@ -11,7 +11,7 @@ dialog {
 	font: inherit;
 	color: inherit;
 
-	position: absolute;
+	position: fixed;
 	inset: 0 0 auto 0;
 	width: 100%;
 	max-width: var(--benev-site-width);
