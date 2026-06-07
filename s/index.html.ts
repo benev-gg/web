@@ -1,11 +1,10 @@
 
 import {template, html, socialCard, dataSvgEmoji} from "@e280/scute"
-import {basisCssText} from "./css/basis.css-text.js"
-import {benevCoreCssText} from "./css/benev-core.css-text.js"
+import {benevCssText} from "./css/benev.csstext.js"
 
 export default template(import.meta.url, async orb => html`
 	<!doctype html>
-	<html>
+	<html benev>
 		<head>
 			<meta charset="utf-8"/>
 			<meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -22,8 +21,7 @@ export default template(import.meta.url, async orb => html`
 						background: #000;
 					}
 				}
-				${html.raw(basisCssText)}
-				${html.raw(benevCoreCssText)}
+				${html.raw(benevCssText)}
 				${orb.inject("css/demo.css")}
 			</style>
 
