@@ -7,7 +7,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		--benev-font-size: 18px;
 		--benev-site-width: 62em;
 		--benev-copy-width: 70ch;
-		--benev-headroom: 3em;
+		--benev-headroom: 2.5em;
 
 		--benev-bg: #111;
 		--benev-prime: #ebb935;

@@ -2,6 +2,10 @@
 import {css} from "lit"
 export default css`@layer benev.view {
 
+:host {
+	width: 100%;
+}
+
 nav {
 	display: flex;
 	flex-wrap: wrap;
@@ -11,13 +15,9 @@ nav {
 	padding: var(--benev-pad);
 }
 
-.b {
+button {
 	display: block;
 	margin-right: auto;
-
-	:host([subtle]) & {
-		--benev-inactive-opacity: 0.3;
-	}
 
 	img {
 		width: 1.5em;

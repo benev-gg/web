@@ -1,5 +1,5 @@
 
 export const consts = {
-	anim: 200,
+	anim: 300,
 }
 

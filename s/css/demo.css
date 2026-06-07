@@ -2,7 +2,6 @@
 @layer demo {
 	main {
 		padding: var(--benev-pad);
-		padding-top: var(--benev-headroom);
 	}
 }
 

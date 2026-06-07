@@ -3,6 +3,7 @@ import {html} from "lit"
 import {dom, shadowElement, useCss, useMount} from "@e280/sly"
 import styleCss from "./style.css.js"
 import {Shell} from "../../brains/shell.js"
+import {HeaderView} from "../header/view.js"
 import {themeCss} from "../../css/theme.css.js"
 import {onKeypress} from "./utils/on-keypress.js"
 import {clickBackdrop} from "./utils/click-backdrop.js"
@@ -16,9 +17,12 @@ export const menuComponent = (shell: Shell) => shadowElement(() => {
 
 	return html`
 		<dialog @click=${click}>
-			<section>
-				hello
+			<section class=plate>
+				<p>wip benev menu</p>
+				<p>coming soon</p>
 			</section>
+
+			${HeaderView(shell)}
 		</dialog>
 	`
 })
