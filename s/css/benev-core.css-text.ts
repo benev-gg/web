@@ -34,6 +34,25 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		--benev-text-shadow: 0.04em 0.08em 0.1em #0008;
 	}
 
+	:root {
+		color-scheme: dark;
+	}
+
+	html, body {
+		min-height: 100%;
+	}
+
+	html {
+		font-family: sans-serif;
+		font-size: var(--benev-font-size);
+
+		scrollbar-gutter: stable;
+		scrollbar-width: thin;
+
+		color: var(--benev-text);
+		text-shadow: var(--benev-text-shadow);
+	}
+
 	[benev-slice] {
 		width: 100%;
 		max-width: var(--benev-site-width);
