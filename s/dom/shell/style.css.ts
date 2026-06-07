@@ -33,12 +33,17 @@ export default css`@layer benev.view {
 		position: absolute;
 		inset: 0 0 auto 0;
 
+		--theight: min(20em, calc(100dvh - var(--benev-headroom)));
+		transform: translateY(calc(-1 * var(--theight)));
+		transition: transform var(--benev-anim) ease;
+
+		[data-opened] & {
+			transform: translateY(0);
+		}
+
 		[part="tray"] {
-			height: 0;
-			overflow: hidden;
-			box-shadow: var(--benev-box-shadow);
-			box-shadow: 0 0 4em oklch(from var(--benev-tray) l c h / 60%);
-			border-radius: 0 0 var(--benev-round) var(--benev-round);
+			height: var(--theight);
+			display: flex;
 
 			background: linear-gradient(
 				to bottom right,
@@ -46,17 +51,28 @@ export default css`@layer benev.view {
 				oklch(from var(--benev-tray) calc(l * 0.6) calc(c * 1.2) h / alpha)
 			);
 
-			border: 0 solid oklch(from var(--benev-tray) calc(l * 1.2) calc(c * 1.2) h / alpha);
+			box-shadow: var(--benev-box-shadow);
+			box-shadow: 0 0 4em oklch(from var(--benev-tray) l c h / 60%);
+			border-radius: 0 0 var(--benev-round) var(--benev-round);
+			border: var(--benev-thick) solid oklch(from var(--benev-tray) calc(l * 1.2) calc(c * 1.2) h / alpha);
+			border-top: 0;
 
+			opacity: 1;
+			transition: opacity var(--benev-anim) linear;
+			[data-closed] & {
+				opacity: 0;
+			}
+		}
+
+		[part="traycontent"] {
+			flex: 1 1 auto;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			transition: height var(--benev-anim) ease;
 
-			[data-opened] & {
-				border-width: var(--benev-thick);
-				height: min(20em, calc(100dvh - 3em));
+			[data-closed] & {
+				display: none;
 			}
 		}
 

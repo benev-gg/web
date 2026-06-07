@@ -28,14 +28,16 @@ export const shellComponent = (shell: Shell) => shadowElement(() => {
 	const open = shell.$open()
 
 	return html`
-		<div class=shell ?data-opened=${open}>
+		<div class=shell ?data-opened=${open} ?data-closed=${!open}>
 			<div part=backdrop ?inert=${!open} @click=${shell.close}></div>
 
 			<header part=header benev-slice>
 				<div part=tray benev-slice>
 					${shell.$open() ? html`
-						<p>b menu</p>
-						<p>coming soon</p>
+						<section part=traycontent>
+							<p>b menu</p>
+							<p>coming soon</p>
+						</section>
 					` : null}
 				</div>
 

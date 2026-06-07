@@ -91,6 +91,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		&[benev-button="naked"] {
 			color: inherit;
 			background: transparent;
+			padding: 0;
 			border-radius: 0;
 			border: none;
 			text-transform: unset;
