@@ -11,3 +11,6 @@ export * from "./dom/header/view.js"
 export * from "./dom/loader/component.js"
 export * from "./dom/menu/component.js"
 
+export * from "./consts.js"
+export * from "./setup.js"
+
