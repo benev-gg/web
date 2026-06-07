@@ -2,14 +2,11 @@
 import {templateString as css} from "@e280/stz"
 export default css`
 
-box-sizing: border-box;
-color-scheme: dark;
-scrollbar-width: thin;
-
 &, *, ::before, ::after {
 	margin: 0;
 	padding: 0;
-	box-sizing: inherit;
+	box-sizing: border-box;
+	scrollbar-width: thin;
 }
 
 :focus-visible {
