@@ -42,8 +42,8 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		color-scheme: dark;
 	}
 
-	html, body {
-		min-height: 100%;
+	body {
+		min-height: 100dvh;
 	}
 
 	html {
