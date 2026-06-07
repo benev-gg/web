@@ -34,7 +34,29 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		--benev-text-shadow: 0.04em 0.08em 0.1em #0008;
 	}
 
-	[benev-link] {
+	[benev-slice] {
+		width: 100%;
+		max-width: var(--benev-site-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	benev-shell:not(:defined) {
+		.topnav {
+			position: absolute;
+			inset: 0 0 auto 0;
+
+			display: flex;
+			justify-content: end;
+			width: 100%;
+			max-width: var(--benev-site-width);
+
+			margin: 0 auto;
+			padding: calc(var(--benev-pad) / 2) var(--benev-pad);
+		}
+	}
+
+	a {
 		color: var(--benev-link);
 		text-decoration: none;
 
@@ -52,14 +74,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		}
 	}
 
-	[benev-slice] {
-		width: 100%;
-		max-width: var(--benev-site-width);
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	[benev-button] {
+	button, [benev-button] {
 		font: inherit;
 		text-decoration: none;
 
@@ -84,7 +99,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 			cursor: pointer;
 			transform: scale(100%);
 			transition: transform var(--benev-anim) ease;
-			&:hover, &:focus-visible { opacity: 1; transform: scale(110%); }
+			&:hover, &:focus-visible { opacity: 1; transform: scale(105%); }
 			&:active { opacity: var(--benev-inactive-opacity); }
 		}
 
@@ -114,18 +129,47 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		}
 	}
 
-	benev-shell:not(:defined) {
-		.topnav {
-			position: absolute;
-			inset: 0 0 auto 0;
+	[benev-prose] {
+		h1 {
+			font-size: 2.5em;
+			color: var(--benev-intense);
+			a { color: inherit; }
+		}
 
-			display: flex;
-			justify-content: end;
-			width: 100%;
-			max-width: var(--benev-site-width);
+		h2 {
+			font-size: 1.5em;
+			color: var(--benev-prime);
+		}
 
-			margin: 0 auto;
-			padding: calc(var(--benev-pad) / 2) var(--benev-pad);
+		p {
+			max-width: var(--benev-copy-width);
+		}
+
+		p:has(> img) {
+			max-width: 100%;
+		}
+
+		img {
+			max-width: 100%;
+			background: #0004;
+			border-radius: var(--benev-round);
+			box-shadow: var(--benev-box-shadow);
+		}
+
+		blockquote {
+			color: oklch(from currentColor l 0 h / 50%);
+			padding-left: var(--benev-pad);
+			margin-left: var(--benev-pad);
+			font-style: italic;
+			border-left: var(--benev-thick) solid currentColor;
+		}
+
+		hr {
+			border: none;
+			display: block;
+			height: var(--benev-thick);
+			background: oklch(from var(--benev-text) l c h / 25%);
+			margin: var(--benev-space) 0;
 		}
 	}
 }`

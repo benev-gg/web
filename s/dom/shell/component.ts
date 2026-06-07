@@ -28,7 +28,7 @@ export const shellComponent = (shell: Shell) => shadowElement(() => {
 	const open = shell.$open()
 
 	return html`
-		<div class=shell ?data-opened=${open} ?data-closed=${!open}>
+		<div class=shell benev-std ?data-opened=${open} ?data-closed=${!open}>
 			<div part=backdrop ?inert=${!open} @click=${shell.close}></div>
 
 			<header part=header benev-slice>
