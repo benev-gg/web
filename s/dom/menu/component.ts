@@ -22,7 +22,7 @@ export const menuComponent = (shell: Shell) => shadowElement(() => {
 
 	return html`
 		<dialog @click=${click}>
-			<section class=plate>
+			<section class=plate autofocus tabindex="-1">
 				${shell.dialog?.open
 					? renderMenuContent()
 					: null}

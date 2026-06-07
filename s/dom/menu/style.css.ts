@@ -22,6 +22,10 @@ dialog {
 	transform: translateY(-100%);
 }
 
+dialog > section:focus {
+	outline: none;
+}
+
 dialog > section {
 	--theight: min(20em, calc(100dvh - var(--benev-headroom)));
 	width: 100%;
@@ -52,10 +56,6 @@ dialog[open] {
 dialog[open][data-closing] {
 	opacity: 0;
 	transform: translateY(-100%);
-}
-
-dialog:focus-visible {
-	outline: none;
 }
 
 dialog::backdrop {
