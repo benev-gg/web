@@ -15,11 +15,17 @@ export const menuComponent = (shell: Shell) => shadowElement(() => {
 	useMount(onKeypress(["KeyB", "Escape"], () => shell.toggle()))
 	const click = clickBackdrop(() => shell.toggle(false))
 
+	const renderMenuContent = () => html`
+		<p>wip benev menu</p>
+		<p>coming soon</p>
+	`
+
 	return html`
 		<dialog @click=${click}>
 			<section class=plate>
-				<p>wip benev menu</p>
-				<p>coming soon</p>
+				${shell.dialog?.open
+					? renderMenuContent()
+					: null}
 			</section>
 
 			${HeaderView(shell)}

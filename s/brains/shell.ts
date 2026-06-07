@@ -1,11 +1,11 @@
 
 import {tracker} from "@e280/strata"
-import {defer, Deferred, got, nap} from "@e280/stz"
+import {got, nap} from "@e280/stz"
 import {consts} from "../consts.js"
 
 export class Shell {
 	#dialog?: HTMLDialogElement
-	#closing?: Deferred
+	#closeToken = 0
 
 	get dialog() {
 		tracker.read(this)
@@ -13,51 +13,55 @@ export class Shell {
 	}
 
 	get open() {
-		return !!this.dialog?.open
+		const dialog = this.dialog
+		return !!dialog?.open && !dialog.hasAttribute("data-closing")
 	}
 
 	attach(dialog: HTMLDialogElement) {
 		this.#dialog = dialog
 		dialog.onclose = () => tracker.write(this)
-		dialog.oncancel = () => tracker.write(this)
+		dialog.oncancel = event => {
+			event.preventDefault()
+			this.toggle(false)
+		}
 	}
 
-	async toggle(please = !this.open) {
+	toggle = (please = !this.open) => {
 		const dialog = got(this.dialog)
 
-		if (please) {
-			dialog.removeAttribute("data-closing")
-			this.#closing?.resolve()
-			this.#closing = undefined
+		if (please)
+			this.#open(dialog)
+		else
+			this.#close(dialog)
 
-			if (!dialog.open)
-				dialog.showModal()
+		tracker.write(this)
+	}
 
-			tracker.write(this)
-			return
-		}
+	#open(dialog: HTMLDialogElement) {
+		this.#closeToken++
+		dialog.removeAttribute("data-closing")
 
+		if (!dialog.open)
+			dialog.showModal()
+	}
+
+	#close(dialog: HTMLDialogElement) {
 		if (!dialog.open)
 			return
 
-		if (this.#closing)
-			return this.#closing.promise
-
-		this.#closing = defer()
+		const token = ++this.#closeToken
 		dialog.setAttribute("data-closing", "")
 
-		try {
-			await nap(consts.anim)
+		nap(consts.anim).then(() => {
+			if (token !== this.#closeToken)
+				return
 
 			if (dialog.hasAttribute("data-closing"))
 				dialog.close()
-		}
-		finally {
+
 			dialog.removeAttribute("data-closing")
-			this.#closing.resolve()
-			this.#closing = undefined
 			tracker.write(this)
-		}
+		})
 	}
 }
 
