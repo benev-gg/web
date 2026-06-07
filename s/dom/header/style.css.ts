@@ -11,7 +11,7 @@ nav {
 	flex-wrap: wrap;
 	justify-content: end;
 	align-items: center;
-	gap: var(--benev-pad);
+	gap: var(--benev-space);
 	padding: var(--benev-pad);
 }
 
@@ -20,8 +20,9 @@ button {
 	margin-right: auto;
 
 	img {
-		width: 1.5em;
-		height: 1.5em;
+		display: block;
+		width: var(--benev-b-size);
+		height: var(--benev-b-size);
 	}
 }
 

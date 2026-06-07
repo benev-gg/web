@@ -16,6 +16,7 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		--benev-intense: white;
 		--benev-focus: 2px solid cyan;
 		--benev-link: color-mix(in oklch, var(--benev-prime), white 25%);
+		--benev-b-size: 1.5em;
 
 		--benev-select-bg: #f60;
 		--benev-select-color: #ff8;
@@ -65,38 +66,24 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 	}
 
 	benev-header {
-		display: block;
+		display: flex;
+		justify-content: end;
+		align-items: center;
 		width: 100%;
 		max-width: var(--benev-site-width);
 		margin: 0 auto;
-	}
 
-	benev-shell {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		min-height: 100dvh;
-		--mheight: 1.8em;
+		&:not(:defined) {
+			padding: var(--benev-pad);
+			gap: var(--benev-space);
 
-		[slot="nav"] {
-			display: flex;
-			align-items: center;
-			justify-content: end;
-			min-height: var(--mheight);
-		}
-
-		&:not(:defined) [slot="nav"] {
-			position: absolute;
-			inset: 0 0 auto 0;
-
-			display: flex;
-			justify-content: end;
-			width: 100%;
-			max-width: var(--benev-site-width);
-			min-height: calc(var(--mheight) + var(--benev-pad));
-
-			margin: 0 auto;
-			padding: calc(var(--benev-pad) / 2) var(--benev-pad);
+			&::before {
+				content: "";
+				display: inline-block;
+				margin-right: auto;
+				width: var(--benev-b-size);
+				height: var(--benev-b-size);
+			}
 		}
 	}
 
