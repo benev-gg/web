@@ -106,6 +106,22 @@ export const benevCoreCssText = css`@layer benev.core, benev.view; @layer benev.
 		&:active {
 			color: color-mix(in srgb, var(--benev-link), white 50%);
 		}
+
+		&[benev-cardlink] {
+			color: inherit;
+			transition: filter anim(--benev-anim) linear;
+
+			&:hover, &:focus-visible {
+				color: inherit;
+				text-decoration: none;
+				filter: brightness(105%);
+			}
+
+			&:active {
+				color: inherit;
+				filter: brightness(95%);
+			}
+		}
 	}
 
 	button, [benev-button] {
