@@ -8,7 +8,7 @@ export class Loader {
 
 	constructor(
 		public element: HTMLElement,
-		public transitionDuration = consts.anim,
+		public anim = consts.anim,
 	) {}
 
 	get busy() {
@@ -31,13 +31,13 @@ export class Loader {
 
 			const [content] = await Promise.all([
 				getContent(),
-				nap(this.transitionDuration),
+				nap(this.anim * 2),
 			])
 
 			this.#swapContent(content)
 			this.element.toggleAttribute("loading", false)
 			this.element.inert = false
-			await nap(this.transitionDuration)
+			await nap(this.anim)
 		}
 		finally {
 			this.element.toggleAttribute("loading", false)

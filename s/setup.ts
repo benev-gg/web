@@ -1,8 +1,8 @@
 
 import {Shell} from "./brains/shell.js"
-import {BenevLoader} from "./dom/loader/component.js"
-import {menuComponent} from "./dom/menu/component.js"
-import {headerComponent} from "./dom/header/component.js"
+import {headerElement} from "./dom/header/view.js"
+import {BenevLoader} from "./dom/loader/view.js"
+import {menuComponent} from "./dom/menu/view.js"
 
 export async function setupBenev() {
 	const shell = new Shell()
@@ -12,7 +12,7 @@ export async function setupBenev() {
 	// })
 
 	const elements = {
-		BenevHeader: headerComponent(shell),
+		BenevHeader: headerElement(shell),
 		BenevMenu: menuComponent(shell),
 		BenevLoader: BenevLoader,
 	}

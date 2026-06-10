@@ -4,9 +4,15 @@ export default css`@layer benev.view {
 
 :host {
 	width: 100%;
+	pointer-events: none;
+}
+
+nav > *, ::slotted(*) {
+	pointer-events: all;
 }
 
 nav {
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: end;
