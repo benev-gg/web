@@ -2,5 +2,6 @@
 import {dom} from "@e280/sly"
 import {setup} from "./setup.js"
 
-dom.register(setup().components)
+const {elements} = await setup()
+dom.register(elements)
 

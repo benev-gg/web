@@ -33,11 +33,10 @@ export default template(import.meta.url, async orb => html`
 			})}
 		</head>
 		<body>
+			<benev-menu></benev-menu>
 			<benev-header>
 				<a href="https://benev.gg/">benev.gg</a>
 			</benev-header>
-
-			<benev-menu></benev-menu>
 
 			<main benev-slice>
 				<benev-loader>

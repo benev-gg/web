@@ -10,14 +10,14 @@ import {menuComponent} from "./dom/menu/component.js"
 import {headerComponent} from "./dom/header/component.js"
 import {loaderComponent} from "./dom/loader/component.js"
 
-export function setup() {
+export async function setup() {
 	const shell = new Shell()
 	const loader = new Loader({
 		transitionDuration: consts.anim,
 		errorDisplay: err => html`<div class=error>error: ${errorString(err, "unknown")}</div>`,
 	})
 
-	const components = {
+	const elements = {
 		BenevHeader: headerComponent(shell),
 		BenevMenu: menuComponent(shell),
 		BenevLoader: loaderComponent(loader),
@@ -26,7 +26,7 @@ export function setup() {
 	return {
 		shell,
 		loader,
-		components,
+		elements,
 	}
 }
 
