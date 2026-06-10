@@ -63,5 +63,5 @@ sdk toolkit for making an official benev website.
           hello world
         </benev-loader>
         ```
-        - you can control the loader content via `await benev.loader.load("stuff", loadStuffFn)`
+        - you control it by creating a `new Loader(dom("benev-loader"))`
 
