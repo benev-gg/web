@@ -14,13 +14,7 @@ export default template(import.meta.url, async orb => html`
 			<link rel="icon" href="${dataSvgEmoji("😇")}"/>
 			<script type="module" src="${orb.hashurl("main.bundle.min.js")}"></script>
 			<style>
-				@layer base, basis, benev, demo;
-				@layer base {
-					:root {
-						color: #aaa;
-						background: #000;
-					}
-				}
+				@layer benev, demo;
 				${html.raw(benevCssText)}
 				${orb.inject("css/demo.css")}
 			</style>
@@ -34,15 +28,16 @@ export default template(import.meta.url, async orb => html`
 		</head>
 		<body>
 			<benev-menu></benev-menu>
+
 			<benev-header>
 				<a href="https://benev.gg/">benev.gg</a>
 			</benev-header>
 
-			<main benev-slice>
-				<benev-loader>
+			<benev-loader>
+				<main benev-slice>
 					<h1>benev</h1>
-				</benev-loader>
-			</main>
+				</main>
+			</benev-loader>
 		</body>
 	</html>
 `)
