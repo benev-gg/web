@@ -41,9 +41,9 @@ sdk toolkit for making an official benev website.
 1. **typescript: install custom elements**
     ```ts
     import {dom} from "@e280/sly"
-    import {setup} from "@benev/web"
+    import {setupBenev} from "@benev/web"
 
-    const benev = await setup()
+    const benev = await setupBenev()
     dom.register(benev.elements)
     ```
     - menu (the benev overlay menu)
