@@ -36,6 +36,7 @@ export default template(import.meta.url, async orb => html`
 			<benev-loader>
 				<main benev-slice>
 					<h1>benev</h1>
+					<button class=testloader>test loader</button>
 				</main>
 			</benev-loader>
 		</body>

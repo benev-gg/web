@@ -1,7 +1,19 @@
 
 @layer demo {
+	benev-header {
+		z-index: 2;
+		position: absolute;
+		inset: 0 0 auto;
+	}
+
+	benev-loader {
+		position: absolute;
+		inset: 0;
+	}
+
 	main {
 		padding: var(--benev-pad);
+		padding-top: var(--benev-headroom);
 	}
 }
 

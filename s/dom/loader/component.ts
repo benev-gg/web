@@ -1,17 +1,20 @@
 
 import {html} from "lit"
 import {shadowElement, useCss} from "@e280/sly"
-import {Loader} from "../../brains/loader.js"
 import {themeCss} from "../../css/theme.css.js"
+import {bDataPng} from "../../assets/b.png.js"
 import styleCss from "./style.css.js"
 
-export const loaderComponent = (loader: Loader) => shadowElement(() => {
+export const BenevLoader = shadowElement(() => {
 	useCss(themeCss, styleCss)
-
-	void loader
 
 	return html`
 		<slot></slot>
+
+		<div class=veil>
+			<img src="${bDataPng}" alt="" draggable="false"/>
+			<slot name=loading></slot>
+		</div>
 	`
 })
 
