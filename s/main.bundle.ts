@@ -1,7 +1,7 @@
 
 import {dom} from "@e280/sly"
-import {setup} from "./setup.js"
+import {setupBenev} from "./setup.js"
 
-const {elements} = await setup()
+const {elements} = await setupBenev()
 dom.register(elements)
 

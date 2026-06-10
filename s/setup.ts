@@ -10,7 +10,7 @@ import {menuComponent} from "./dom/menu/component.js"
 import {headerComponent} from "./dom/header/component.js"
 import {loaderComponent} from "./dom/loader/component.js"
 
-export async function setup() {
+export async function setupBenev() {
 	const shell = new Shell()
 	const loader = new Loader({
 		transitionDuration: consts.anim,
