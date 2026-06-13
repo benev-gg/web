@@ -4,15 +4,33 @@ import {Content, dom} from "@e280/sly"
 import {consts} from "../../consts.js"
 
 export class Loader {
-	#busy = false
+	original
+
+	#loading
+	#content
+	#operation = 0
 
 	constructor(
-		public element: HTMLElement,
-		public anim = consts.anim,
-	) {}
+			public element: HTMLElement,
+			public anim = consts.anim,
+		) {
 
-	get busy() {
-		return this.#busy
+		this.original = document.createElement("template")
+		this.original.innerHTML = element.innerHTML
+
+		this.#loading = document.createElement("div")
+		this.#loading.style.display = "contents"
+		this.#loading.slot = "loading"
+
+		this.#content = document.createElement("div")
+		this.#content.style.display = "contents"
+		dom.render(this.#content, Array.from(element.childNodes))
+
+		this.element.replaceChildren()
+		this.element.append(
+			this.#loading,
+			this.#content,
+		)
 	}
 
 	async load(
@@ -20,53 +38,33 @@ export class Loader {
 			getContent: () => Promise<Content>,
 		) {
 
-		if (this.#busy)
-			throw new Error("loader is busy")
+		this.#operation += 1
+		const operation = this.#operation
+		const isLatest = () => (this.#operation === operation)
+		this.element.inert = true
+		this.element.toggleAttribute("loading", true)
+		dom.render(this.#loading, getLoading())
 
 		try {
-			this.#busy = true
-			this.element.inert = true
-			this.#addLoading(getLoading())
-			this.element.toggleAttribute("loading", true)
-
 			const [content] = await Promise.all([
 				getContent(),
 				nap(this.anim * 2),
 			])
 
-			this.#swapContent(content)
-			this.element.toggleAttribute("loading", false)
-			this.element.inert = false
-			await nap(this.anim)
+			if (isLatest()) {
+				this.element.toggleAttribute("loading", false)
+				this.element.inert = false
+				dom.render(this.#content, content)
+				await nap(this.anim)
+			}
 		}
 		finally {
-			this.element.toggleAttribute("loading", false)
-			this.#removeLoading()
-			this.element.inert = false
-			this.#busy = false
+			if (isLatest()) {
+				this.element.toggleAttribute("loading", false)
+				this.element.inert = false
+				dom.render(this.#loading, null)
+			}
 		}
-	}
-
-	#addLoading(loading: Content) {
-		const div = document.createElement("div")
-		div.slot = "loading"
-		dom.render(div, loading)
-		this.element.append(div)
-	}
-
-	#removeLoading() {
-		for (const child of [...this.element.children]) {
-			if (child.slot === "loading")
-				child.remove()
-		}
-	}
-
-	#swapContent(content: Content) {
-		for (const child of [...this.element.childNodes]) {
-			if (!(child instanceof HTMLElement && child.slot === "loading"))
-				child.remove()
-		}
-		dom.render(this.element, content)
 	}
 }
 
