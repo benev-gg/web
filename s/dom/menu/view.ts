@@ -13,12 +13,9 @@ export const menuComponent = (shell: Shell) => shadowElement(() => {
 	useCss(themeCss, styleCss)
 	useAfterFirstRender(shadow => shell.attach(dom("dialog", shadow)))
 	useMount(onKeypress(["KeyB", "Escape"], () => shell.toggle()))
-	const click = clickBackdrop(() => shell.toggle(false))
 
-	const renderMenuContent = () => html`
-		<p>wip benev menu</p>
-		<p>coming soon</p>
-	`
+	const click = clickBackdrop(() => shell.toggle(false))
+	const renderMenuContent = () => html`<slot></slot>`
 
 	return html`
 		<dialog @click=${click}>

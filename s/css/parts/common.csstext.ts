@@ -98,6 +98,10 @@ button, [benev-button] {
 	margin-right: auto;
 }
 
+benev-menu:not(:defined) {
+	display: none;
+}
+
 benev-header {
 	display: flex;
 	justify-content: end;

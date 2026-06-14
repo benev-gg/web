@@ -20,7 +20,7 @@ sdk toolkit for making an official benev website.
         <style data-theme>
           @layer benev, app;
           @layer app {
-            :root, :host {
+            :root {
               color: #aaa;
               background: #000;
             }
