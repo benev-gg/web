@@ -21,7 +21,6 @@ a {
 
 	&[benev-cardlink] {
 		color: inherit;
-		transition: filter anim(--benev-anim) linear;
 
 		&:hover, &:focus-visible {
 			color: inherit;
@@ -49,6 +48,7 @@ button, [benev-button] {
 	text-transform: uppercase;
 	color: var(--benev-prime);
 	background: oklch(from var(--benev-bg) l c h / 50%);
+	backdrop-filter: var(--benev-blur);
 	border: var(--benev-thick) solid currentColor;
 	border-radius: var(--benev-round);
 
@@ -57,17 +57,17 @@ button, [benev-button] {
 	}
 
 	&:not([disabled]) {
-		opacity: var(--benev-inactive-opacity);
 		cursor: pointer;
 		transform: scale(100%);
-		transition: transform var(--benev-anim) ease;
-		&:hover, &:focus-visible { opacity: 1; transform: scale(105%); }
-		&:active { opacity: var(--benev-inactive-opacity); }
+		transition: all var(--benev-anim) ease;
+		&:hover, &:focus-visible { transform: scale(105%); filter: brightness(120%); }
+		&:active { transform: scale(100%); filter: brightness(100%); }
 	}
 
 	&[benev-button="naked"] {
 		color: inherit;
 		background: transparent;
+		backdrop-filter: none;
 		padding: 0;
 		border-radius: 0;
 		border: none;
@@ -129,19 +129,6 @@ benev-header {
 	flex-direction: column;
 	gap: var(--benev-pad);
 
-	code {
-		display: block;
-		width: 100%;
-		overflow: auto;
-
-		padding: var(--benev-space);
-		color: var(--benev-code);
-		background: var(--benev-backdrop);
-		border-radius: var(--benev-round);
-		border: var(--benev-border);
-		box-shadow: var(--benev-box-shadow);
-	}
-
 	h1 {
 		font-size: 2.5em;
 		color: var(--benev-intense);
@@ -196,6 +183,21 @@ benev-header {
 		margin: var(--benev-space) 0;
 	}
 
+	code {
+		font-size: 0.8em;
+
+		display: block;
+		width: 100%;
+		overflow: auto;
+
+		padding: var(--benev-space);
+		color: var(--benev-code);
+		background: var(--benev-backdrop);
+		border-radius: var(--benev-round);
+		border: var(--benev-border);
+		border-color: oklch(from var(--benev-code) l c h / 33%);
+		box-shadow: var(--benev-box-shadow);
+	}
 }
 
 `
