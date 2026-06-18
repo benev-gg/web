@@ -11,7 +11,7 @@ export default css`
 --benev-bg: #111;
 --benev-prime: #ebb935;
 --benev-tray: #453e2ca8;
---benev-text: color-mix(in oklch, var(--benev-prime), #fffa 75%);
+--benev-text: color-mix(in oklch, var(--benev-prime), #fffc 90%);
 --benev-intense: white;
 --benev-focus: 2px solid cyan;
 --benev-link: aqua;
