@@ -49,6 +49,7 @@ button, [benev-button] {
 	color: var(--benev-prime);
 	background: oklch(from var(--benev-bg) l c h / 50%);
 	backdrop-filter: var(--benev-blur);
+	box-shadow: var(--benev-box-shadow);
 	border: var(--benev-thick) solid currentColor;
 	border-radius: var(--benev-round);
 
@@ -68,6 +69,7 @@ button, [benev-button] {
 		color: inherit;
 		background: transparent;
 		backdrop-filter: none;
+		box-shadow: none;
 		padding: 0;
 		border-radius: 0;
 		border: none;
