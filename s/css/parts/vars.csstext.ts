@@ -14,8 +14,9 @@ export default css`
 --benev-text: color-mix(in oklch, var(--benev-prime), #fffa 75%);
 --benev-intense: white;
 --benev-focus: 2px solid cyan;
---benev-link: color-mix(in oklch, var(--benev-prime), white 25%);
+--benev-link: aqua;
 --benev-b-size: 1.5em;
+--benev-code: #0f0;
 
 --benev-select-bg: #f60;
 --benev-select-color: #ff8;
@@ -31,7 +32,7 @@ export default css`
 --benev-anim: ${consts.anim}ms;
 --benev-round: 0.5em;
 --benev-blur: blur(1em);
---benev-backdrop: rgb(0 0 0 / 50%);
+--benev-backdrop: #0008;
 
 --benev-box-shadow: 0 0.5em 2em #0008;
 --benev-text-shadow: 0.04em 0.08em 0.1em #0008;
