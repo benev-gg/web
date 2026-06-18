@@ -34,7 +34,7 @@
 		"@e280/hottie": "^0.1.1",
 		"@e280/octo": "^0.1.1",
 		"@e280/science": "^0.1.11",
-		"@e280/scute": "^0.4.0",
+		"@e280/scute": "^0.4.1",
 		"typescript": "^6.0.3"
 	},
 	"author": "Chase Moskal <chasemoskal@gmail.com>",
