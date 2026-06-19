@@ -6,20 +6,36 @@ import pageCsstext from "./parts/page.csstext.js"
 import commonCsstext from "./parts/common.csstext.js"
 
 export const benevCssText = css`
-@layer benev.core, benev.view;
+
+@layer
+	benev.vars,
+	benev.core,
+	benev.common,
+	benev.page;
+
+@layer benev.vars {
+	[benev], :host {
+		${varsCsstext}
+	}
+}
 
 @layer benev.core {
 	[benev], :host {
-		${varsCsstext}
 		${coreCsstext}
 	}
 }
 
-@layer benev.view {
+@layer benev.common {
 	[benev], :host {
-		${pageCsstext}
 		${commonCsstext}
 	}
 }
+
+@layer benev.page {
+	[benev], :host {
+		${pageCsstext}
+	}
+}
+
 `
 
