@@ -35,7 +35,7 @@
 		"@e280/octo": "^0.1.2",
 		"@e280/science": "^0.1.11",
 		"@e280/scute": "^0.4.1",
-		"typescript": "^6.0.3"
+		"typescript": "^7.0.2"
 	},
 	"author": "Chase Moskal <chasemoskal@gmail.com>",
 	"homepage": "https://github.com/benev-gg/web#readme",
