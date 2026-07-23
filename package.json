@@ -1,6 +1,6 @@
 {
 	"name": "@benev/web",
-	"version": "0.1.0-2",
+	"version": "0.1.0-3",
 	"description": "✨ benev web sdk",
 	"license": "MIT",
 	"type": "module",
