@@ -2,7 +2,7 @@
 import {html} from "lit"
 import {dom} from "@e280/sly"
 import {nap} from "@e280/stz"
-import {setupBenev} from "./setup.js"
+import {setupBenev} from "./vitals/setup.js"
 import {Loader} from "./dom/loader/loader.js"
 
 const {elements} = await setupBenev()

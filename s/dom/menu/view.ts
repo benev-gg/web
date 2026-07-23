@@ -2,7 +2,7 @@
 import {html} from "lit"
 import {dom, shadowElement, useCss, useMount} from "@e280/sly"
 import styleCss from "./style.css.js"
-import {Shell} from "../../brains/shell.js"
+import {Shell} from "../../vitals/shell.js"
 import {HeaderView} from "../header/view.js"
 import {themeCss} from "../../css/theme.css.js"
 import {onKeypress} from "./utils/on-keypress.js"

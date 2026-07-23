@@ -1,7 +1,7 @@
 
 import {html} from "lit"
 import {shadow, shadowElement, useCss, useName} from "@e280/sly"
-import {Shell} from "../../brains/shell.js"
+import {Shell} from "../../vitals/shell.js"
 import {bDataPng} from "../../assets/b.png.js"
 import {themeCss} from "../../css/theme.css.js"
 import styleCss from "./style.css.js"
