@@ -14,15 +14,18 @@ export default css`@layer benev.view {
 	pointer-events: none;
 
 	opacity: 1;
+	transform: scale(100%);
 	visibility: visible;
 
 	transition:
 		opacity var(--benev-anim) linear,
+		transform var(--benev-anim) ease,
 		visiblity 0ms linear allow-discrete;
 }
 
 :host(:not([loading])) .veil {
 	opacity: 0;
+	transform: scale(0%);
 	visiblity: hidden;
 }
 
