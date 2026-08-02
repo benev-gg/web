@@ -9,7 +9,7 @@ import {onKeypress} from "./utils/on-keypress.js"
 import {clickBackdrop} from "./utils/click-backdrop.js"
 import {useAfterFirstRender} from "./utils/use-after-first-render.js"
 
-export const menuComponent = (shell: Shell) => shadowElement(() => {
+export const makeBenevMenu = (shell: Shell) => shadowElement(() => {
 	useCss(themeCss, styleCss)
 	useAfterFirstRender(shadow => shell.attach(dom("dialog", shadow)))
 	useMount(onKeypress(["KeyB", "Escape"], () => shell.toggle()))

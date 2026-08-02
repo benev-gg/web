@@ -1,6 +1,6 @@
 
-import {tracker} from "@e280/strata"
 import {got, nap} from "@e280/stz"
+import {tracker} from "@e280/strata"
 import {consts} from "../consts.js"
 
 export class Shell {

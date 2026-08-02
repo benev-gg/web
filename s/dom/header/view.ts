@@ -1,10 +1,11 @@
 
 import {html} from "lit"
 import {shadow, shadowElement, useCss, useName} from "@e280/sly"
+
+import styleCss from "./style.css.js"
 import {Shell} from "../../vitals/shell.js"
 import {bDataPng} from "../../assets/b.png.js"
 import {themeCss} from "../../css/theme.css.js"
-import styleCss from "./style.css.js"
 
 const Header = (shell: Shell) => {
 	const click = () => shell.toggle()
@@ -24,7 +25,7 @@ export const HeaderView = shadow((shell: Shell) => {
 	return Header(shell)
 })
 
-export const headerElement = (shell: Shell) => shadowElement(() => {
+export const makeBenevHeader = (shell: Shell) => shadowElement(() => {
 	useCss(themeCss, styleCss)
 	return Header(shell)
 })
