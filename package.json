@@ -29,6 +29,8 @@
 	},
 	"dependencies": {
 		"@e280/authlocal": "^0.3.0-14",
+		"@e280/kv": "^0.2.0",
+		"@e280/renraku": "^0.6.0-6",
 		"@e280/stz": "^0.3.10"
 	},
 	"devDependencies": {
