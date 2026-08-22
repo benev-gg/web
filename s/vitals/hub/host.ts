@@ -6,11 +6,14 @@ import {sendPort, webAutoTransfer} from "@e280/renraku/web"
 import {consts} from "../../consts.js"
 import {HubClientApi, HubHostApi} from "./types.js"
 
-export async function hostHub() {
-	const {topic, allowedOrigins} = consts
+export async function hostHub(options: {
+		allowedOrigins: Set<string>
+	}) {
+
+	const {topic} = consts
 	const {port, origin} = await sendPort({topic, to: window.parent})
 
-	if (!allowedOrigins.has(origin))
+	if (!options.allowedOrigins.has(origin))
 		throw new Error(`forbidden origin "${origin}"`)
 
 	const autoTransfer = webAutoTransfer
@@ -29,9 +32,11 @@ export async function hostHub() {
 	const portal = new Portal<HubClientApi>({port, fns, autoTransfer})
 	auth.on(() => portal.remote.sessionChange(getSession()))
 
-	return () => {
+	const dispose = () => {
 		portal.close()
 		auth.dispose()
 	}
+
+	return {auth, dispose}
 }
 

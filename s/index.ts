@@ -1,5 +1,5 @@
 
-export * from "./vitals/hub/connect.js"
+export * from "./vitals/hub/iframe.js"
 export * from "./vitals/hub/host.js"
 export * from "./vitals/hub/types.js"
 export * from "./vitals/shell.js"
