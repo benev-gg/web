@@ -91,6 +91,31 @@ benev-header {
 			height: var(--benev-b-size);
 		}
 	}
+
+	a {
+		position: relative;
+		color: var(--benev-prime);
+		padding: 0.2em;
+		font-size: 1.2em;
+
+		&[data-active] {
+			text-shadow: 0 0 0.5em currentColor;
+
+			&::after {
+				content: "•";
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				line-height: 0.3em;
+				text-align: center;
+				text-shadow:
+					0 0 0.5em currentColor,
+					0 0 0.5em currentColor;
+			}
+		}
+	}
 }
 
 [benev-prose] {

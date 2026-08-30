@@ -1,5 +1,6 @@
 
 import {template, html, socialCard, dataSvgEmoji} from "@e280/scute"
+import {topNav} from "./ssg/top-nav.js"
 import {benevCssText} from "./css/benev.csstext.js"
 
 export default template(import.meta.url, async orb => html`
@@ -32,7 +33,7 @@ export default template(import.meta.url, async orb => html`
 			</benev-menu>
 
 			<benev-header>
-				<a href="https://benev.gg/">benev.gg</a>
+				${topNav("games")}
 			</benev-header>
 
 			<benev-loader>
