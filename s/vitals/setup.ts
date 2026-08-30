@@ -2,13 +2,13 @@
 import {Shell} from "./shell.js"
 import {Account} from "../dom/account/account.js"
 import {BenevLoader} from "../dom/loader/view.js"
-import {makeBenevAccount} from "../dom/account/view.js"
 import {makeBenevMenu} from "../dom/menu/view.js"
 import {makeBenevHeader} from "../dom/header/view.js"
+import {makeBenevAccount} from "../dom/account/view.js"
 
 export async function setupBenev() {
-	const account = new Account()
 	const shell = new Shell()
+	const account = new Account()
 
 	const elements = {
 		BenevLoader,
@@ -17,10 +17,6 @@ export async function setupBenev() {
 		BenevAuth: makeBenevAccount(account),
 	}
 
-	return {
-		account,
-		shell,
-		elements,
-	}
+	return {account, shell, elements}
 }
 

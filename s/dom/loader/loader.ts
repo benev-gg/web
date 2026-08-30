@@ -1,7 +1,7 @@
 
 import {nap} from "@e280/stz"
 import {Content, dom} from "@e280/sly"
-import {consts} from "../../consts.js"
+import {bconfig} from "../../bconfig.js"
 
 export class Loader {
 	original
@@ -12,7 +12,7 @@ export class Loader {
 
 	constructor(
 			public element: HTMLElement,
-			public anim = consts.anim,
+			public anim = bconfig.anim,
 		) {
 
 		this.original = document.createElement("template")

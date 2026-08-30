@@ -1,6 +1,6 @@
 
 import {templateString as css} from "@e280/stz"
-import {consts} from "../../consts.js"
+import {bconfig} from "../../bconfig.js"
 export default css`
 
 --benev-font-size: 18px;
@@ -28,7 +28,7 @@ export default css`
 
 --benev-pad: 0.5em;
 --benev-space: 1em;
---benev-anim: ${consts.anim}ms;
+--benev-anim: ${bconfig.anim}ms;
 --benev-round: 0.5em;
 --benev-blur: blur(1em);
 --benev-backdrop: #0008;

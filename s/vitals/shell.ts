@@ -1,7 +1,7 @@
 
 import {got, nap} from "@e280/stz"
 import {tracker} from "@e280/strata"
-import {consts} from "../consts.js"
+import {bconfig} from "../bconfig.js"
 
 export class Shell {
 	#dialog?: HTMLDialogElement
@@ -52,7 +52,7 @@ export class Shell {
 		const token = ++this.#closeToken
 		dialog.setAttribute("data-closing", "")
 
-		nap(consts.anim).then(() => {
+		nap(bconfig.anim).then(() => {
 			if (token !== this.#closeToken)
 				return
 
