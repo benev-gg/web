@@ -105,10 +105,10 @@ benev-header {
 				content: "•";
 				display: block;
 				position: absolute;
-				top: 100%;
+				top: 90%;
 				left: 0;
 				right: 0;
-				line-height: 0.3em;
+				line-height: 0;
 				text-align: center;
 				text-shadow:
 					0 0 0.5em currentColor,
