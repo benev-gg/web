@@ -29,7 +29,7 @@ export default template(import.meta.url, async orb => html`
 		</head>
 		<body>
 			<benev-menu>
-				<benev-auth></benev-auth>
+				<benev-account></benev-account>
 			</benev-menu>
 
 			<benev-header>

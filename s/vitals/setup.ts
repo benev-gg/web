@@ -1,4 +1,5 @@
 
+import {Auth, makeAuthWidget} from "@e280/authlocal"
 import {Shell} from "./shell.js"
 import {Account} from "../dom/account/account.js"
 import {BenevLoader} from "../dom/loader/view.js"
@@ -9,15 +10,19 @@ import {makeBenevAccount} from "../dom/account/view.js"
 
 export async function setupBenev() {
 	const shell = new Shell()
-	const account = new Account()
+	const auth = new Auth()
+	const account = new Account(auth)
 
 	const elements = {
 		BenevLoader,
 		BenevFooter: makeBenevFooter(),
 		BenevMenu: makeBenevMenu(shell),
 		BenevHeader: makeBenevHeader(shell),
-		BenevAuth: makeBenevAccount(account),
+		BenevAccount: makeBenevAccount(account),
+		BenevAuth: makeAuthWidget(account.auth),
 	}
+
+	await auth.remember()
 
 	return {account, shell, elements}
 }
