@@ -1,14 +1,18 @@
 
 import {html} from "lit"
-import {shadow, shadowElement, useCss, useName} from "@e280/sly"
+import {useCss} from "@e280/sly"
 
 import styleCss from "./style.css.js"
 import {Shell} from "../../vitals/shell.js"
 import {bDataPng} from "../../assets/b.png.js"
 import {themeCss} from "../../css/theme.css.js"
+import {shadowDuplex} from "../tools/shadow-duplex.js"
 
-const Header = (shell: Shell) => {
+export const [HeaderView, makeBenevHeader] = shadowDuplex("benev-header", (shell: Shell) => {
+	useCss(themeCss, styleCss)
+
 	const click = () => shell.toggle()
+
 	return html`
 		<nav part=nav ?data-opened=${shell.open} ?data-closed=${!shell.open}>
 			<button benev-button=naked title="b menu" @click=${click}>
@@ -17,16 +21,5 @@ const Header = (shell: Shell) => {
 			<slot></slot>
 		</nav>
 	`
-}
-
-export const HeaderView = shadow((shell: Shell) => {
-	useName("header")
-	useCss(themeCss, styleCss)
-	return Header(shell)
-})
-
-export const makeBenevHeader = (shell: Shell) => shadowElement(() => {
-	useCss(themeCss, styleCss)
-	return Header(shell)
 })
 

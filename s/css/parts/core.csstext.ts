@@ -42,7 +42,7 @@ a {
 		&:hover, &:focus-visible {
 			color: inherit;
 			text-decoration: none;
-			filter: brightness(105%);
+			filter: brightness(110%);
 		}
 
 		&:active {

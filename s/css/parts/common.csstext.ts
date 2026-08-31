@@ -118,6 +118,19 @@ benev-header {
 	}
 }
 
+benev-footer {
+	width: 100%;
+	max-width: var(--benev-site-width);
+	margin-left: auto;
+	margin-right: auto;
+
+	display: flex;
+	gap: var(--benev-space);
+	justify-content: end;
+	padding: var(--benev-space);
+	--benev-link: #fffa;
+}
+
 [benev-prose] {
 	display: flex;
 	flex-direction: column;
