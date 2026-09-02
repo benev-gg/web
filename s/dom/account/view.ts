@@ -10,7 +10,7 @@ export const makeBenevAccount = (_account: Account) => shadowElement(() => {
 	useCss(themeCss, styleCss)
 
 	return html`
-		<benev-auth>Sign in</benev-auth>
+		<benev-auth>sign in</benev-auth>
 	`
 })
 
