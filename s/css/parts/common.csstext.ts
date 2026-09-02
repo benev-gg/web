@@ -95,8 +95,7 @@ benev-header {
 	a {
 		position: relative;
 		color: var(--benev-prime);
-		padding: 0.2em;
-		font-size: 1.2em;
+		font-size: 1em;
 
 		&[data-active] {
 			text-shadow: 0 0 0.5em currentColor;

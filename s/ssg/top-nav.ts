@@ -1,7 +1,7 @@
 
 import {html} from "@e280/scute"
 import {Zone} from "../types.js"
-import { bconfig } from "../bconfig.js"
+import {bconfig} from "../bconfig.js"
 
 export function topNav(currentZone: Zone) {
 	return html`
