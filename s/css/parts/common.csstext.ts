@@ -104,7 +104,7 @@ benev-header {
 				content: "•";
 				display: block;
 				position: absolute;
-				top: 90%;
+				top: 100%;
 				left: 0;
 				right: 0;
 				line-height: 0;
