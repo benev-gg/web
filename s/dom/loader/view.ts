@@ -13,8 +13,10 @@ export const BenevLoader = shadowElement(() => {
 		<slot></slot>
 
 		<div class=veil>
-			<img src="${bDataPng}" alt="" draggable="false"/>
-			<slot name=loading></slot>
+			<div class=scalar>
+				<img class=logo src="${bDataPng}" alt="" draggable="false"/>
+				<slot name=loading></slot>
+			</div>
 		</div>
 	`
 })
