@@ -33,6 +33,13 @@ export class Loader {
 		)
 	}
 
+	async reset(getLoading: () => Content) {
+		return this.load(
+			getLoading,
+			async() => Array.from(this.original.content.cloneNode(true).childNodes),
+		)
+	}
+
 	async load(
 			getLoading: () => Content,
 			getContent: () => Promise<Content>,
