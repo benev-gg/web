@@ -3,7 +3,7 @@ import {html} from "@e280/scute"
 import {Zone} from "../types.js"
 import {bconfig} from "../bconfig.js"
 
-export function topNav(currentZone: Zone) {
+export function benevNav(currentZone: Zone) {
 	return html`
 		${navlink(currentZone, "games")}
 		${navlink(currentZone, "devlog")}
