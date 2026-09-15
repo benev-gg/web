@@ -12,8 +12,7 @@ export default css`@layer benev.view {
 	inset: 0;
 	transition:
 		opacity var(--benev-anim) linear,
-		transform var(--benev-anim) ease,
-		visiblity 0ms linear allow-discrete;
+		transform var(--benev-anim) ease;
 
 	display: flex;
 	flex-direction: column;
@@ -23,11 +22,11 @@ export default css`@layer benev.view {
 }
 
 .veil {
+	z-index: 1;
 	pointer-events: all;
 	background: var(--benev-bg);
 
 	opacity: 1;
-	visibility: visible;
 
 	.scalar {
 		transform: scale(100%);
@@ -43,7 +42,6 @@ export default css`@layer benev.view {
 :host(:not([loading])) .veil {
 	pointer-events: none;
 	opacity: 0;
-	visiblity: hidden;
 
 	.scalar {
 		transform: scale(0%);
