@@ -23,15 +23,15 @@
 		"esbuild@0.28.2": true
 	},
 	"peerDependencies": {
-		"@e280/sly": "^0.4.4",
-		"@e280/strata": "^0.4.3",
-		"lit": "^3.3.2"
+		"@e280/sly": "^0.4.8",
+		"@e280/strata": "^0.5.1",
+		"lit": "^3.3.3"
 	},
 	"dependencies": {
 		"@e280/authlocal": "^0.3.5",
 		"@e280/kv": "^0.2.1",
-		"@e280/renraku": "0.6.0-6",
-		"@e280/stz": "^0.3.10"
+		"@e280/renraku": "^0.6.0-9",
+		"@e280/stz": "^0.3.13"
 	},
 	"devDependencies": {
 		"@e280/hottie": "^0.1.5",
