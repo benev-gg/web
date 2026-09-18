@@ -117,6 +117,18 @@ benev-header {
 	}
 }
 
+benev-loader {
+	[benev-error] {
+		position: absolute;
+		display: flex;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		color: var(--benev-angry);
+	}
+}
+
 benev-footer {
 	width: 100%;
 	max-width: var(--benev-site-width);

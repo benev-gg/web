@@ -18,6 +18,7 @@ export default css`
 --benev-b-size: 1.5em;
 --benev-code: #0f0;
 
+--benev-angry: #f40;
 --benev-select-bg: #f60;
 --benev-select-color: #ff8;
 

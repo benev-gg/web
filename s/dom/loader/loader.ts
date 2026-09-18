@@ -1,6 +1,7 @@
 
-import {nap} from "@e280/stz"
+import {html} from "lit"
 import {Content, dom} from "@e280/sly"
+import {errorString, nap} from "@e280/stz"
 import {bconfig} from "../../bconfig.js"
 
 export class Loader {
@@ -43,18 +44,26 @@ export class Loader {
 	async load(
 			getLoading: () => Content,
 			getContent: () => Promise<Content>,
+			getError?: (error: unknown) => Content,
 		) {
 
 		this.#operation += 1
 		const operation = this.#operation
 		const isLatest = () => (this.#operation === operation)
+
 		this.element.inert = true
 		this.element.toggleAttribute("loading", true)
 		dom.render(this.#loading, getLoading())
 
 		try {
 			const [content] = await Promise.all([
-				getContent(),
+				getContent()
+					.catch(error => {
+						console.error(error)
+						return getError?.(error) ?? html`
+							<div benev-error>${errorString(error, "an error occurred")}</div>
+						`
+					}),
 				nap(this.anim * 2),
 			])
 
