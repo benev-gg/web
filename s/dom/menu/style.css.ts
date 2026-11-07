@@ -33,8 +33,11 @@ dialog > section {
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
+
+	overflow: auto;
+	scrollbar-gutter: stable;
 
 	background: linear-gradient(
 		to bottom right,
