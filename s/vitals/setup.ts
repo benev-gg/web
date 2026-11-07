@@ -1,5 +1,5 @@
 
-import {Auth, makeAuthWidget} from "@e280/authlocal"
+import {Auth, makeWidgetElement} from "@e280/authlocal"
 import {Shell} from "./shell.js"
 import {Account} from "../dom/account/account.js"
 import {BenevLoader} from "../dom/loader/view.js"
@@ -19,7 +19,7 @@ export async function setupBenev() {
 		BenevMenu: makeBenevMenu(shell),
 		BenevHeader: makeBenevHeader(shell),
 		BenevAccount: makeBenevAccount(account),
-		BenevAuth: makeAuthWidget(account.auth),
+		BenevAuth: makeWidgetElement(account.auth),
 	}
 
 	await auth.remember()
