@@ -8,6 +8,8 @@ import {makeBenevFooterElement} from "../dom/duplexes/footer/view.js"
 import {makeBenevHeaderElement} from "../dom/duplexes/header/view.js"
 import {makeBenevAccountElement} from "../dom/duplexes/account/view.js"
 
+export type Benev = Awaited<ReturnType<typeof setupBenev>>
+
 export async function setupBenev() {
 	const shell = new Shell()
 	const account = new Account(new Auth())

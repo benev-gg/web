@@ -2,14 +2,15 @@
 import {html} from "lit"
 import {nap} from "@e280/stz"
 import {dom, register, renderIn} from "@e280/sly"
+
 import {setupBenev} from "./vitals/setup.js"
 import {Loader} from "./dom/duplexes/loader/loader.js"
-import { BenevDashboard } from "./dom/views/dashboard/view.js"
+import {BenevDashboard} from "./dom/views/dashboard/view.js"
 
 const benev = await setupBenev()
 register(benev.elements)
 
-benev.shell.onAttach.next().then(() => benev.shell.toggle(true))
+// benev.shell.onAttach.next().then(() => benev.shell.toggle(true))
 
 const loader = new Loader(dom("benev-loader"))
 
