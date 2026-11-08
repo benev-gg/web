@@ -12,7 +12,11 @@ export type Dashpanels = Record<string, {
 	render: () => Content
 }>
 
-export const BenevDashboard = shadowView((account: Account, panels: Dashpanels) => {
+export const BenevDashboard = shadowView(({account, panels}: {
+		account: Account
+		panels: Dashpanels
+	}) => {
+
 	useName("benev-dashboard")
 	useCss(themeCss, styleCss)
 
