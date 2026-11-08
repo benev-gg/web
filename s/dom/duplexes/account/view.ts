@@ -5,7 +5,7 @@ import {shadowDuplex, useCss} from "@e280/sly"
 
 import {Account} from "./account.js"
 import styleCss from "./style.css.js"
-import {themeCss} from "../../css/theme.css.js"
+import {themeCss} from "../../../css/theme.css.js"
 
 export const [BenevAccount, makeBenevAccountElement] = shadowDuplex((account: Account) => {
 	useCss(themeCss, styleCss)

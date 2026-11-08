@@ -1,12 +1,12 @@
 
 import {Auth} from "@e280/authlocal"
 import {Shell} from "./shell.js"
-import {Account} from "../dom/account/account.js"
-import {makeBenevMenuElement} from "../dom/menu/view.js"
-import {makeBenevLoaderElement} from "../dom/loader/view.js"
-import {makeBenevFooterElement} from "../dom/footer/view.js"
-import {makeBenevHeaderElement} from "../dom/header/view.js"
-import {makeBenevAccountElement} from "../dom/account/view.js"
+import {Account} from "../dom/duplexes/account/account.js"
+import {makeBenevMenuElement} from "../dom/duplexes/menu/view.js"
+import {makeBenevLoaderElement} from "../dom/duplexes/loader/view.js"
+import {makeBenevFooterElement} from "../dom/duplexes/footer/view.js"
+import {makeBenevHeaderElement} from "../dom/duplexes/header/view.js"
+import {makeBenevAccountElement} from "../dom/duplexes/account/view.js"
 
 export async function setupBenev() {
 	const shell = new Shell()

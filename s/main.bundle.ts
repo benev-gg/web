@@ -3,7 +3,7 @@ import {html} from "lit"
 import {nap} from "@e280/stz"
 import {dom, register, renderIn} from "@e280/sly"
 import {setupBenev} from "./vitals/setup.js"
-import {Loader} from "./dom/loader/loader.js"
+import {Loader} from "./dom/duplexes/loader/loader.js"
 import { BenevDashboard } from "./dom/views/dashboard/view.js"
 
 const benev = await setupBenev()

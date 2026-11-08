@@ -3,9 +3,9 @@ import {html} from "lit"
 import {got} from "@e280/stz"
 import {Content, shadowView, useCss, useName, useSignal} from "@e280/sly"
 import styleCss from "./style.css.js"
-import {Account} from "../../account/account.js"
+import {Account} from "../../duplexes/account/account.js"
 import {themeCss} from "../../../css/theme.css.js"
-import {BenevAccount} from "../../account/view.js"
+import {BenevAccount} from "../../duplexes/account/view.js"
 
 export type Dashpanels = Record<string, {
 	label: () => Content

@@ -3,8 +3,8 @@ import {html} from "lit"
 import {shadowDuplex, useCss, useName} from "@e280/sly"
 
 import styleCss from "./style.css.js"
-import {themeCss} from "../../css/theme.css.js"
-import {bDataPng} from "../../assets/b.png.js"
+import {themeCss} from "../../../css/theme.css.js"
+import {bDataPng} from "../../../assets/b.png.js"
 
 export const [BenevLoader, makeBenevLoaderElement] = shadowDuplex(() => {
 	useName("benev-loader")

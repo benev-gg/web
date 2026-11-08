@@ -2,7 +2,7 @@
 import {html} from "lit"
 import {Content, dom} from "@e280/sly"
 import {errorString, nap} from "@e280/stz"
-import {bconfig} from "../../bconfig.js"
+import {bconfig} from "../../../bconfig.js"
 
 export class Loader {
 	original
