@@ -40,23 +40,25 @@ sdk toolkit for making an official benev website.
     ```
 1. **typescript: install custom elements**
     ```ts
-    import {dom} from "@e280/sly"
+    import {register} from "@e280/sly"
     import {setupBenev} from "@benev/web"
 
     const benev = await setupBenev()
-    dom.register(benev.elements)
+    register(benev.elements)
     ```
     - menu (the benev overlay menu)
         ```html
         <benev-menu></benev-menu>
         ```
         - you can control the menu via `benev.shell`, eg, `benev.shell.toggle()`
+        - sly view also available as `BenevMenu`.
     - header (standard header with `b` button that opens menu)
         ```html
         <benev-header>
           <a href="https://benev.gg/">benev.gg</a>
         </benev-header>
         ```
+        - sly view also available as `BenevHeader`.
     - loader (loading screens)
         ```html
         <benev-loader>
@@ -64,4 +66,5 @@ sdk toolkit for making an official benev website.
         </benev-loader>
         ```
         - you control it by creating a `new Loader(dom("benev-loader"))`
+        - sly view also available as `BenevLoader`.
 
