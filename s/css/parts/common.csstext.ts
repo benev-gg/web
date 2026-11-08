@@ -24,7 +24,7 @@ button, [benev-button] {
 		opacity: 0.3;
 	}
 
-	&:not([disabled]) {
+	&:not([disabled], [benev-button="naked"]) {
 		cursor: pointer;
 		transform: scale(100%);
 		transition: all var(--benev-anim) ease;
