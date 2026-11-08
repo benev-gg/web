@@ -27,6 +27,8 @@ dialog > section:focus {
 }
 
 dialog > section {
+	overflow: clip;
+
 	--theight: min(20em, calc(100dvh - var(--benev-headroom)));
 	width: 100%;
 	height: var(--theight);
