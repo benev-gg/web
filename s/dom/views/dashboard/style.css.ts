@@ -14,17 +14,33 @@ export default css`@layer benev.view {
 	flex-wrap: wrap;
 
 	> nav {
+		user-select: none;
 		flex: 1 1 auto;
 		display: flex;
 		flex-wrap: wrap;
+		border-bottom: var(--benev-border);
 
 		button {
+			cursor: pointer;
+			padding: var(--benev-nib) var(--benev-space);
+			border-bottom: var(--benev-thick) solid transparent;
+
+			&:is(:hover, :focus-visible) {
+				background: color-mix(in oklch, transparent, var(--benev-prime) 10%);
+			}
+
+			&[data-active] {
+				background: color-mix(in oklch, transparent, var(--benev-prime) 20%);
+				border-bottom-color: var(--benev-prime);
+			}
 		}
 	}
 }
 
 :host > section {
 	flex: 1 1 auto;
+	overflow: auto;
+	scrollbar-gutters: stable;
 }
 
 }`

@@ -36,9 +36,6 @@ dialog > section {
 	justify-content: start;
 	align-items: center;
 
-	overflow: auto;
-	scrollbar-gutter: stable both-edges;
-
 	background: linear-gradient(
 		to bottom right,
 		var(--benev-tray),

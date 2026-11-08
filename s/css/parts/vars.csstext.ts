@@ -27,6 +27,7 @@ export default css`
 --benev-thick: 3px;
 --benev-border: var(--benev-thin) solid color-mix(in oklch, transparent, var(--benev-line) 50%);
 
+--benev-nib: 0.2em;
 --benev-pad: 0.5em;
 --benev-space: 1em;
 --benev-anim: ${bconfig.anim}ms;
