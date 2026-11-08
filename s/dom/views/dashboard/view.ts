@@ -3,8 +3,8 @@ import {html} from "lit"
 import {got} from "@e280/stz"
 import {Content, shadowView, useCss, useName, useSignal} from "@e280/sly"
 import styleCss from "./style.css.js"
-import {Account} from "../../duplexes/account/account.js"
 import {themeCss} from "../../../css/theme.css.js"
+import {Account} from "../../duplexes/account/account.js"
 import {BenevAccount} from "../../duplexes/account/view.js"
 
 export type Dashpanels = Record<string, {
@@ -26,11 +26,13 @@ export const BenevDashboard = shadowView((account: Account, panels: Dashpanels) 
 
 	return html`
 		<header>
-			<nav>
+			<nav role=tablist>
 				${Object.entries(panels).map(([key, panel]) => html`
 					<button
+						role=tab
 						benev-button=naked
-						data-active="${key === activeKey}"
+						?data-active="${key === activeKey}"
+						aria-selected="${key === activeKey}"
 						@click="${() => $activeKey(key)}">
 							${panel.label()}
 					</button>
@@ -40,7 +42,7 @@ export const BenevDashboard = shadowView((account: Account, panels: Dashpanels) 
 			${BenevAccount(account)}
 		</header>
 
-		<section class=panel>
+		<section class=panel role=tabpanel>
 			${activePanel?.render()}
 		</section>
 	`

@@ -11,10 +11,15 @@ export default css`@layer benev.view {
 
 :host > header {
 	display: flex;
+	flex-wrap: wrap;
 
 	> nav {
 		flex: 1 1 auto;
 		display: flex;
+		flex-wrap: wrap;
+
+		button {
+		}
 	}
 }
 
