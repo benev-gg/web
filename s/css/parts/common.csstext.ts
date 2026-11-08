@@ -24,7 +24,10 @@ button, [benev-button] {
 		opacity: 0.3;
 	}
 
-	&:not([disabled], [benev-button="naked"]) {
+	&:is(
+			:not([disabled], [benev-button~="naked"]),
+			[benev-button~="animated"]
+		) {
 		cursor: pointer;
 		transform: scale(100%);
 		transition: all var(--benev-anim) ease;
@@ -32,7 +35,7 @@ button, [benev-button] {
 		&:active { transform: scale(100%); filter: brightness(100%); }
 	}
 
-	&[benev-button="naked"] {
+	&[benev-button~="naked"] {
 		color: inherit;
 		background: transparent;
 		backdrop-filter: none;
@@ -45,7 +48,7 @@ button, [benev-button] {
 		text-transform: inherit;
 	}
 
-	&[benev-button="juicy"] {
+	&[benev-button~="juicy"] {
 		opacity: 1;
 		color: black;
 		border: var(--benev-thick) solid var(--benev-prime);

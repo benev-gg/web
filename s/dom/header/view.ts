@@ -15,7 +15,7 @@ export const [BenevHeader, makeBenevHeaderElement] = shadowDuplex((shell: Shell)
 
 	return html`
 		<nav part=nav ?data-opened=${shell.open} ?data-closed=${!shell.open}>
-			<button benev-button=naked title="b menu" @click=${click}>
+			<button benev-button="naked animated" title="b menu" @click=${click}>
 				<img part=img src="${bDataPng}" alt=""/>
 			</button>
 			<slot></slot>
