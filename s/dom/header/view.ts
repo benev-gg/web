@@ -1,6 +1,6 @@
 
 import {html} from "lit"
-import {shadowDuplex, useCss} from "@e280/sly"
+import {shadowDuplex, useCss, useName} from "@e280/sly"
 
 import styleCss from "./style.css.js"
 import {Shell} from "../../vitals/shell.js"
@@ -8,6 +8,7 @@ import {bDataPng} from "../../assets/b.png.js"
 import {themeCss} from "../../css/theme.css.js"
 
 export const [HeaderView, makeBenevHeader] = shadowDuplex((shell: Shell) => {
+	useName("benev-header")
 	useCss(themeCss, styleCss)
 
 	const click = () => shell.toggle()
