@@ -37,7 +37,7 @@ dialog > section {
 	align-items: center;
 
 	overflow: auto;
-	scrollbar-gutter: stable;
+	scrollbar-gutter: stable both-edges;
 
 	background: linear-gradient(
 		to bottom right,

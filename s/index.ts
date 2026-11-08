@@ -10,6 +10,8 @@ export * from "./dom/loader/view.js"
 export * from "./dom/loader/loader.js"
 export * from "./dom/menu/view.js"
 
+export * from "./dom/views/dashboard/view.js"
+
 export * from "./bconfig.js"
 export * from "./types.js"
 

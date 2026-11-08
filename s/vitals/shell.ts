@@ -1,9 +1,10 @@
 
-import {got, nap} from "@e280/stz"
+import {got, nap, subby} from "@e280/stz"
 import {tracker} from "@e280/strata"
 import {bconfig} from "../bconfig.js"
 
 export class Shell {
+	onAttach = subby()
 	#dialog?: HTMLDialogElement
 	#closeToken = 0
 
@@ -24,6 +25,7 @@ export class Shell {
 			event.preventDefault()
 			this.toggle(false)
 		}
+		this.onAttach.publish()
 	}
 
 	toggle = (please = !this.open) => {
