@@ -1,29 +1,27 @@
 
-import {Auth, makeWidgetElement} from "@e280/authlocal"
+import {Auth} from "@e280/authlocal"
 import {Shell} from "./shell.js"
 import {Account} from "../dom/account/account.js"
-import {BenevLoader} from "../dom/loader/view.js"
-import {makeBenevMenu} from "../dom/menu/view.js"
-import {makeBenevFooter} from "../dom/footer/view.js"
-import {makeBenevHeader} from "../dom/header/view.js"
-import {makeBenevAccount} from "../dom/account/view.js"
+import {makeBenevMenuElement} from "../dom/menu/view.js"
+import {makeBenevLoaderElement} from "../dom/loader/view.js"
+import {makeBenevFooterElement} from "../dom/footer/view.js"
+import {makeBenevHeaderElement} from "../dom/header/view.js"
+import {makeBenevAccountElement} from "../dom/account/view.js"
 
 export async function setupBenev() {
 	const shell = new Shell()
-	const auth = new Auth()
-	const account = new Account(auth)
+	const account = new Account(new Auth())
 
 	const elements = {
-		BenevLoader,
-		BenevFooter: makeBenevFooter(),
-		BenevMenu: makeBenevMenu(shell),
-		BenevHeader: makeBenevHeader(shell),
-		BenevAccount: makeBenevAccount(account),
-		BenevAuth: makeWidgetElement(account.auth),
+		BenevLoader: makeBenevLoaderElement(),
+		BenevFooter: makeBenevFooterElement(),
+		BenevMenu: makeBenevMenuElement(shell),
+		BenevHeader: makeBenevHeaderElement(shell),
+		BenevAccount: makeBenevAccountElement(account),
 	}
 
-	await auth.remember()
+	await account.auth.remember()
 
-	return {account, shell, elements}
+	return {shell, account, elements}
 }
 

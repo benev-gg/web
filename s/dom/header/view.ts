@@ -7,7 +7,7 @@ import {Shell} from "../../vitals/shell.js"
 import {bDataPng} from "../../assets/b.png.js"
 import {themeCss} from "../../css/theme.css.js"
 
-export const [HeaderView, makeBenevHeader] = shadowDuplex((shell: Shell) => {
+export const [BenevHeader, makeBenevHeaderElement] = shadowDuplex((shell: Shell) => {
 	useName("benev-header")
 	useCss(themeCss, styleCss)
 
