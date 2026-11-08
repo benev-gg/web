@@ -40,7 +40,7 @@ export default css`@layer benev.view {
 :host > section {
 	flex: 1 1 auto;
 	overflow: auto;
-	scrollbar-gutters: stable;
+	scrollbar-gutter: stable;
 }
 
 }`
