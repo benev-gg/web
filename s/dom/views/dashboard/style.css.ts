@@ -30,8 +30,10 @@ export default css`@layer benev.view {
 			}
 
 			&[data-active] {
+				color: var(--benev-prime);
 				background: color-mix(in oklch, transparent, var(--benev-prime) 20%);
 				border-bottom-color: var(--benev-prime);
+				text-shadow: 0 0 0.5em var(--benev-prime);
 			}
 		}
 	}
