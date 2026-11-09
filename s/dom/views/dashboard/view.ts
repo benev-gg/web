@@ -29,10 +29,11 @@ export const BenevDashboard = shadowView(({account, panels}: {
 	const activePanel = panels[activeKey]
 
 	return html`
-		<header>
-			<nav role=tablist>
+		<header part=header>
+			<nav part=nav role=tablist>
 				${Object.entries(panels).map(([key, panel]) => html`
 					<button
+						part=button
 						role=tab
 						benev-button=naked
 						?data-active="${key === activeKey}"
@@ -46,7 +47,7 @@ export const BenevDashboard = shadowView(({account, panels}: {
 			${BenevAccount(account)}
 		</header>
 
-		<section class=panel role=tabpanel>
+		<section part=panel class=panel role=tabpanel>
 			${activePanel?.render()}
 		</section>
 	`
