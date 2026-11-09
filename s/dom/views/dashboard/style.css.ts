@@ -12,6 +12,7 @@ export default css`@layer benev.view {
 
 :host > header {
 	display: flex;
+	flex-wrap: wrap;
 
 	> nav {
 		user-select: none;
