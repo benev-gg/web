@@ -29,9 +29,11 @@ dialog > section:focus {
 dialog > section {
 	overflow: clip;
 
-	--theight: min(20em, calc(100dvh - var(--benev-headroom)));
 	width: 100%;
-	height: var(--theight);
+	height: min(
+		var(--benev-menu-height),
+		calc(100dvh - var(--benev-headroom))
+	);
 
 	display: flex;
 	flex-direction: column;

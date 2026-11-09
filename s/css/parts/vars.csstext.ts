@@ -17,6 +17,7 @@ export default css`
 --benev-link: aqua;
 --benev-b-size: 1.5em;
 --benev-code: #0f0;
+--benev-menu-height: 42em;
 
 --benev-angry: #f40;
 --benev-select-bg: #f60;
