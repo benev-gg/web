@@ -2,21 +2,16 @@
 import {html} from "lit"
 import {got} from "@e280/stz"
 import {Content, shadowView, useCss, useName, useSignal} from "@e280/sly"
+
 import styleCss from "./style.css.js"
 import {themeCss} from "../../../css/theme.css.js"
-import {Account} from "../../duplexes/account/account.js"
-import {BenevAccount} from "../../duplexes/account/view.js"
 
 export type Dashpanels = Record<string, {
 	label: () => Content
 	render: () => Content
 }>
 
-export const BenevDashboard = shadowView(({account, panels}: {
-		account: Account
-		panels: Dashpanels
-	}) => {
-
+export const BenevDashboard = shadowView(({panels}: {panels: Dashpanels}) => {
 	useName("benev-dashboard")
 	useCss(themeCss, styleCss)
 
@@ -44,7 +39,7 @@ export const BenevDashboard = shadowView(({account, panels}: {
 				`)}
 			</nav>
 
-			${BenevAccount(account)}
+			<slot part=slot></slot>
 		</header>
 
 		<section part=panel class=panel role=tabpanel>

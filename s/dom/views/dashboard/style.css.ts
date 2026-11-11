@@ -13,6 +13,7 @@ export default css`@layer benev.view {
 :host > header {
 	display: flex;
 	flex-wrap: wrap;
+	gap: var(--benev-nib);
 
 	> nav {
 		user-select: none;
@@ -37,6 +38,12 @@ export default css`@layer benev.view {
 				text-shadow: 0 0 0.5em var(--benev-prime);
 			}
 		}
+	}
+
+	slot {
+		display: flex;
+		gap: var(--benev-nib);
+		margin-left: auto;
 	}
 }
 

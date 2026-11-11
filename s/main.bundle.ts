@@ -22,7 +22,6 @@ dom(".testloader").onclick = async() => {
 }
 
 renderIn(dom("benev-menu"), BenevDashboard({
-	account: benev.account,
 	panels: {
 		alpha: {
 			label: () => "alpha",
