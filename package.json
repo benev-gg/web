@@ -29,14 +29,13 @@
 	},
 	"dependencies": {
 		"@e280/authlocal": "^0.3.10",
-		"@e280/kv": "^0.2.6",
+		"@e280/scute": "^0.5.5",
 		"@e280/stz": "^0.4.17"
 	},
 	"devDependencies": {
 		"@e280/hottie": "^0.1.7",
 		"@e280/octo": "^0.1.7",
 		"@e280/science": "^0.1.14",
-		"@e280/scute": "^0.5.5",
 		"typescript": "^7.0.2"
 	},
 	"author": "Chase Moskal <chasemoskal@gmail.com>",
