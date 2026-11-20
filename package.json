@@ -28,12 +28,12 @@
 		"lit": "^3.3.3"
 	},
 	"dependencies": {
-		"@e280/authlocal": "^0.3.12",
+		"@e280/authlocal": "^0.3.13",
 		"@e280/scute": "^0.5.5",
-		"@e280/stz": "^0.4.17"
+		"@e280/stz": "^0.4.18"
 	},
 	"devDependencies": {
-		"@e280/hottie": "^0.1.7",
+		"@e280/hottie": "^0.1.9",
 		"@e280/octo": "^0.1.7",
 		"@e280/science": "^0.1.14",
 		"typescript": "^7.0.2"
