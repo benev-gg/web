@@ -16,6 +16,9 @@ export function onKeypress(keys: string[], fn: () => void) {
 			if (typing)
 				return
 
+			if (event.repeat)
+				return
+
 			if (keys.includes(event.code)) {
 				event.preventDefault()
 				fn()
